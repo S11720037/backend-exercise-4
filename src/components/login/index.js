@@ -14,7 +14,7 @@ function Login() {
   };
 
   return (
-    <div className="container-md border rounded shadow-lg mt-5 mb-3 px-4 pb-5 py-3">
+    <div className="container-md border rounded shadow-lg mb-3 px-4 pb-5 py-3">
       <h3 className="text-center">Login</h3>
       <hr />
 
