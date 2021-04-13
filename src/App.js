@@ -8,8 +8,8 @@ function App() {
       <Navbar />
 
       <div className="container-fluid mt-3 p-2">
-        {/* <Login /> */}
-        <Register />
+        <Login />
+        {/* <Register /> */}
       </div>
     </div>
   );

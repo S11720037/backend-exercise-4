@@ -4,7 +4,9 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = e => {
+    e.preventDefault();
+
     console.log("=============");
     console.log(`Username: ${username}`);
     console.log(`Password: ${password}`);
@@ -45,7 +47,7 @@ function Login() {
           <button
             type="submit"
             className="btn btn-primary"
-            onClick={handleSubmit}
+            onClick={e => handleSubmit(e)}
             style={{ width: "100%" }}
           >
             Login
