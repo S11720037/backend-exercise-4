@@ -1,6 +1,7 @@
 import Navbar from "./components/navbar";
 import Login from "./components/login";
 import Register from "./components/register";
+import Dashboard from "./components/dashboard";
 
 function App() {
   return (
@@ -8,8 +9,9 @@ function App() {
       <Navbar />
 
       <div className="container-fluid mt-3 p-2">
-        <Login />
+        {/* <Login /> */}
         {/* <Register /> */}
+        <Dashboard />
       </div>
     </div>
   );
