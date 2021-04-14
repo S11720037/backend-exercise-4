@@ -1,10 +1,10 @@
 import { Switch, Route, Link } from "react-router-dom";
 
-import Navbar from "./components/navbar";
-import Login from "./components/login";
-import Register from "./components/register";
-import Dashboard from "./components/dashboard";
-import About from "./components/about";
+import Navbar from "./components/organisms/navbar";
+import Login from "./components/pages/login";
+import Register from "./components/pages/register";
+import Dashboard from "./components/pages/dashboard";
+import About from "./components/pages/about";
 
 function App() {
   return (
