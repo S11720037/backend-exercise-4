@@ -91,7 +91,7 @@ function Register() {
             onClick={e => handleSubmit(e)}
             style={{ width: "100%" }}
           >
-            Login
+            Register
           </button>
         </div>
       </form>
