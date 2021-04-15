@@ -5,6 +5,7 @@ import Login from "./components/pages/login";
 import Register from "./components/pages/register";
 import Dashboard from "./components/pages/dashboard";
 import About from "./components/pages/about";
+import AddUser from "./components/pages/add-user";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route exact path="/add-user">
+            <AddUser />
           </Route>
           <Route exact path="/">
             <Dashboard />
