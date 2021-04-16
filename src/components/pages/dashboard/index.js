@@ -1,35 +1,41 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+import Card from "../../molecules/card";
+
 function Dashboard() {
+  const [users, setUsers] = useState([]);
+
+  const endpoint = "http://localhost:3003/users";
+
+  useEffect(() => {
+    axios.get(endpoint).then(response => {
+      setUsers(response.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    console.log(users);
+  }, [users]);
+
   return (
-    <div className="container-md border rounded shadow-lg mb-3 px-4 pb-5 py-3">
+    <div className="container-md border rounded shadow-lg mb-3 px-3 pb-5 py-3">
       <h3 className="text-center">Dashboard</h3>
       <hr />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-        beatae, iste mollitia autem facere, laboriosam voluptas laudantium omnis
-        tenetur obcaecati quo dicta. Reiciendis aliquid illo voluptatibus
-        laborum, quia facilis labore.
-      </p>
 
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi repellat
-        laudantium odio. Sint tempora a beatae deleniti modi deserunt voluptates
-        dolore sunt nostrum minima quibusdam similique distinctio quos,
-        assumenda itaque vel recusandae mollitia debitis veritatis magni ea aut
-        rerum ratione. Magni atque sed, saepe soluta fuga omnis! Ullam vel saepe
-        doloremque, perferendis soluta dolores eius ab? Cupiditate corporis
-        aperiam exercitationem deserunt. Aliquam reprehenderit distinctio dolor
-        itaque similique totam facere quae quisquam libero sed vel quos
-        possimus, quibusdam, dicta sit, accusantium quis voluptas voluptatibus
-        fugit placeat maiores? Expedita repellendus reprehenderit veritatis cum
-        ut explicabo velit possimus pariatur. Nesciunt rerum excepturi repellat?
-      </p>
-
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit,
-        voluptates omnis earum vitae aliquid illum! Autem obcaecati minus ab,
-        voluptate repellendus corporis incidunt magnam a, consectetur iusto quis
-        dignissimos doloribus!
-      </p>
+      <div className="row p-0">
+        {users.map(e => {
+          return (
+            <div className="col-sm-4 p-0" key={e.id}>
+              <Card
+                first_name={e.first_name}
+                last_name={e.last_name}
+                email={e.email}
+              />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
