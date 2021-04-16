@@ -12,7 +12,9 @@ function App() {
     <div>
       <Navbar />
 
-      <div className="container-fluid mt-3 p-2">
+      <br />
+
+      <div className="container-fluid mt-5 p-2">
         <Switch>
           <Route path="/login">
             <Login />
