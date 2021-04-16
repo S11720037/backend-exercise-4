@@ -77,6 +77,12 @@
       "last_name": "Kazuma",
       "email": "admin@animemoe.us",
       "id": 13
+    },
+    {
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "johndoe@mail.com",
+      "id": 14
     }
   ]
 }

@@ -21,9 +21,12 @@ function AddUser() {
       email: email,
     };
 
-    axios.post("http://localhost:3003/users", data);
-
-    alert(`${firstName} ${lastName} Berhasil Ditambahkan`);
+    axios
+      .post("http://localhost:3003/users", data)
+      .then(() => alert(`${firstName} ${lastName} Berhasil Ditambahkan`))
+      .catch(() => {
+        alert("Tidak Bisa Terhubung ke json-server");
+      });
 
     // clean the input
     setFirstName("");
