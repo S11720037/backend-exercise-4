@@ -1,16 +1,34 @@
 import { useState } from "react";
+import axios from "axios";
 
 function AddUser() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    console.log("=============");
-    console.log(`Username: ${username}`);
-    console.log(`Password: ${password}`);
-    console.log("=============");
+    // console.log("=============");
+    // console.log(`Name: ${firstName} ${lastName}`);
+    // console.log(`Email: ${email}`);
+    // console.log("=============");
+
+    // save data to json-server
+    const data = {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+    };
+
+    axios.post("http://localhost:3003/users", data);
+
+    alert(`${firstName} ${lastName} Berhasil Ditambahkan`);
+
+    // clean the input
+    setFirstName("");
+    setLastName("");
+    setEmail("");
   };
 
   return (
@@ -27,8 +45,8 @@ function AddUser() {
             type="text"
             className="form-control"
             id="first-name"
-            // value={username}
-            // onChange={e => setUsername(e.target.value)}
+            value={firstName}
+            onChange={e => setFirstName(e.target.value)}
           />
         </div>
         <div className="mb-3">
@@ -39,8 +57,8 @@ function AddUser() {
             type="text"
             className="form-control"
             id="last-name"
-            // value={username}
-            // onChange={e => setUsername(e.target.value)}
+            value={lastName}
+            onChange={e => setLastName(e.target.value)}
           />
         </div>
         <div className="mb-3">
@@ -51,8 +69,8 @@ function AddUser() {
             type="email"
             className="form-control"
             id="email"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
+            value={email}
+            onChange={e => setEmail(e.target.value)}
           />
         </div>
         <div className="text-center">

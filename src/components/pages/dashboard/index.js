@@ -10,7 +10,7 @@ function Dashboard() {
 
   useEffect(() => {
     axios.get(endpoint).then(response => {
-      setUsers(response.data);
+      setUsers(response.data.reverse());
     });
   }, []);
 
