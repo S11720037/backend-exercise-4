@@ -1,4 +1,4 @@
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import Navbar from "./components/organisms/navbar";
 import Login from "./components/pages/login";

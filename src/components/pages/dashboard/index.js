@@ -14,9 +14,7 @@ function Dashboard() {
     });
   }, []);
 
-  useEffect(() => {
-    console.log(users);
-  }, [users]);
+  useEffect(() => {}, [users]);
 
   return (
     <div className="container-md border rounded shadow-lg mb-3 px-3 pb-5 py-3">
